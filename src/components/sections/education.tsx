@@ -4,7 +4,7 @@ import { FadeIn } from "@/components/ui/Motion";
 
 export function Education() {
   return (
-    <section id="experiencia" className="max-w-6xl mx-auto px-4">
+    <section id="educacion" className="max-w-6xl mx-auto px-4">
          <FadeIn>
             <div className="flex flex-col gap-2">
                   <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">

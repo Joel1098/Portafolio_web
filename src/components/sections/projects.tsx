@@ -28,12 +28,12 @@ export function Projects() {
                 Proyectos
               </h2>
               <p className="text-slate-400 max-w-2xl text-sm md:text-base">
-                Conjunto de tecnologías en las que me desempeño enfocadas en el procesamiento y anáisis de datos y el desarrollo de software escalable.
+                Proyectos que he desarrollado enfocados en el procesamiento y análisis de datos y el desarrollo de software escalable.
               </p>
             </div>
           </FadeIn>
     
-          <StaggerGrid className="grid grid-cols-4 md:grid-cols-3 gap-3">
+          <StaggerGrid className="grid grid-cols-4 md:grid-cols-2 gap-3">
             {projects.map((project, index) => {
               return (
                 <StaggerItem key={index}>

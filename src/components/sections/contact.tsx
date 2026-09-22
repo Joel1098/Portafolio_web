@@ -1,54 +1,81 @@
-import { Hero } from "@/components/sections/hero";
-import { ArrowUpRight, Mail } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+"use client";
 
-
+import { GlassCard } from "@/components/ui/GlassCard";
+import { FadeIn } from "@/components/ui/Motion";
+import { Mail } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 export function Contact() {
   return (
-    <div className="max-w-3xl mx-auto text-center">
-      <p className="text-slate-400 text-lg mb-10">
-        Contáctamente si te encuentras interesado en desarrollar un proyecto, temas de contratación 
-        o alguna otra cuestión relacionada en ingeniería, procesamiento y análisis de datos, con gusto atenderé tu mensaje.
-      </p>
+    <footer id="contacto" className="pt-20 pb-12 max-w-6xl mx-auto px-4 sm:px-6 space-y-16">
+      <FadeIn>
+        <GlassCard className="relative overflow-hidden p-8 md:p-12 border-blue-500/20 bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-950/80">
+          {/* Luz de fondo acentuada */}
+          <div className="absolute -top-24 -right-24 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="flex flex-col md:flex-row justify-center items-center gap-6">
-        
-        {/* Correo Electrónico */}
-        <a 
-          href="mailto:joeldgjo98@gmail.com" 
-          className="flex items-center gap-3 bg-slate-800 hover:bg-slate-700 text-white px-6 py-4 rounded-2xl transition-all w-full md:w-auto"
-        >
-          <Mail className="w-5 h-5" />
-          <span className="font-semibold">Enviar correo</span>
-        </a>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            {/* Texto y propuesta */}
+            <div className="lg:col-span-7 space-y-4">
+              
+              <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-xl">
+                Me encuentro en busca de nuevas oportunidades dentro de los campos de Ingeniería de Datos, Backend y Análisis. 
+                Ponte en contacto conmigo para discutir cómo puedo contribuir a tu equipo y proyectos. Estoy abierto a roles en cualquier modalidad, y me comprometo a responder rápidamente a tus mensajes.
+              </p>
 
-        {/* LinkedIn */}
-        <a 
-          href="https://www.linkedin.com/in/joel-ernesto-dorantes-guerrero-72b7841a2/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-2xl transition-all w-full md:w-auto"
-        >
-          <FaLinkedin className="w-6 h-6" />
-          <span className="font-semibold">LinkedIn</span>
-        </a>
+            </div>
 
-        {/* GitHub */}
-        <a 
-          href="https://github.com/Joel1098" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="flex items-center gap-3 bg-slate-800 hover:bg-slate-700 text-white px-6 py-4 rounded-2xl transition-all w-full md:w-auto"
-        >
-          <FaGithub className="w-6 h-6" />
-          <span className="font-semibold">GitHub</span>
-          <ArrowUpRight className="w-4 h-4" />
-        </a>
-        <h2 className="text-3xl font-bold mb-8">Visualiza o descarga mi CV</h2>
-        
-            <Hero /> 
+            {/* Enlaces de Acción */}
+            <div className="lg:col-span-5 flex flex-col gap-3">
+              <h3 className="text-lg font-bold text-white tracking-tight">
+                Puedes comunicarte conmigo por medio de correo electrónico</h3>
+              <a
+                href="mailto:joeldgjo98@gmail.com"
+                className="flex items-center justify-between p-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-all shadow-lg shadow-blue-600/20 group"
+              >
+                <div className="flex items-center gap-3">
+                  <Mail className="w-5 h-5" />
+                  <span>Enviar Correo Electrónico</span>
+                </div>
+              </a>
+
+              <div className="grid grid-cols-2 gap-3">
+                <h3 className="text-lg font-bold text-white tracking-tight col-span-2">
+                  También puedes encontrarme en mis redes sociales y echar un vistazo a mis proyectos y contribuciones en GitHub.
+                </h3>
+                <a
+                  href="https://www.linkedin.com/in/joel-ernesto-dorantes-guerrero-72b7841a2/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 p-3.5 rounded-xl bg-slate-800/60 hover:bg-slate-800 border border-slate-700/50 text-slate-200 text-xs font-medium transition-all hover:text-white"
+                >
+                  <FaLinkedin className="w-4 h-4 text-blue-400" />
+                  <span>LinkedIn</span>
+                </a>
+
+                <a
+                  href="https://github.com/Joel1098"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 p-3.5 rounded-xl bg-slate-800/60 hover:bg-slate-800 border border-slate-700/50 text-slate-200 text-xs font-medium transition-all hover:text-white"
+                >
+                  <FaGithub className="w-4 h-4 text-slate-300" />
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </GlassCard>
+      </FadeIn>
+
+      {/* Pie de página inferior */}
+      <div className="pt-8 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 Joel Dorantes. Desarrollado con Next.js, TypeScript y Tailwind CSS.</p>
+        <div className="flex items-center gap-4">
+          <a href="#inicio" className="hover:text-slate-300 transition-colors">
+            Volver arriba ↑
+          </a>
+        </div>
       </div>
-    </div>
+    </footer>
   );
 }

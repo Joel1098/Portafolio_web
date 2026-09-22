@@ -1,6 +1,6 @@
 "use client";
 
-import { Code2, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const navItems = [
@@ -15,10 +15,9 @@ const navItems = [
 
 ];
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Detecta el desplazamiento para ajustar sombras y padding dinámicamente
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -36,75 +35,79 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-200/80 py-3.5"
-          : "bg-white/60 backdrop-blur-sm py-5"
+          ? "bg-slate-950/80 backdrop-blur-md border-b border-slate-800/60 shadow-lg shadow-black/20 py-3.5"
+          : "bg-transparent py-5"
       }`}
     >
-      <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
-        
-        {/* LOGO / NOMBRE */}
-        <a 
-          href="#inicio" 
-          className="flex items-center gap-2 text-slate-900 font-bold text-lg tracking-tight hover:text-blue-600 transition-colors"
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+        {/* Logo / Nombre */}
+        <a
+          href="#inicio"
+          className="flex items-center gap-2 text-white font-bold tracking-tight text-lg group"
         >
-          <div className="p-1.5 bg-slate-900 text-white rounded-lg">
-            <Code2 className="w-4 h-4" />
-          </div>
-          <span>Joel Dorantes</span>
+          <span>
+            Joel<span className="text-blue-400">Dorantes</span>
+          </span>
         </a>
 
-        {/* NAVEGACIÓN ESCRITORIO */}
-        <nav className="hidden md:flex items-center gap-1">
+        {/* Links Escritorio */}
+        <nav className="hidden md:flex items-center gap-1 bg-slate-900/50 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-sm">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 rounded-lg transition-all"
+              className="px-4 py-1.5 text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-all"
             >
               {item.name}
             </a>
           ))}
-
-          {/* Botón Destacado de Contacto */}
-          <a
-            href="#contacto"
-            className="ml-3 px-4 py-2 text-sm font-medium text-white bg-slate-900 hover:bg-slate-800 rounded-lg transition-all shadow-sm hover:shadow"
-          >
-            Contacto
-          </a>
         </nav>
 
-        {/* BOTÓN MENÚ MÓVIL */}
+        {/* Botón CTA derecho (Escritorio) */}
+        <div className="hidden md:flex items-center gap-3">
+          <a
+            href="#contacto"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-medium text-white bg-blue-600 hover:bg-blue-500 transition-all shadow-md shadow-blue-600/20 active:scale-95"
+          >
+            <span>Hablemos</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
+          </a>
+        </div>
+
+        {/* Botón Menú Móvil */}
         <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors"
-          aria-label="Abrir menú de navegación"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-2 text-slate-300 hover:text-white rounded-lg bg-slate-900/60 border border-slate-800 focus:outline-none"
+          aria-label="Toggle menu"
         >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
-      {/* MENÚ MÓVIL DESPLEGABLE */}
-      {isOpen && (
-        <nav className="md:hidden bg-white/95 backdrop-blur-md border-b border-slate-200 px-6 py-4 flex flex-col gap-2 shadow-lg animate-in slide-in-from-top-2">
+      {/* Menú Desplegable Móvil */}
+      {mobileMenuOpen && (
+        <div className="md:hidden px-4 pt-3 pb-6 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800 mt-2 space-y-2">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              onClick={() => setIsOpen(false)}
-              className="px-4 py-2.5 text-slate-700 hover:text-slate-900 hover:bg-slate-100 rounded-lg font-medium transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-slate-800/60 hover:text-blue-400 transition-colors"
             >
               {item.name}
             </a>
           ))}
-          <a
-            href="#contacto"
-            onClick={() => setIsOpen(false)}
-            className="mt-2 text-center px-4 py-2.5 text-white bg-slate-900 hover:bg-slate-800 rounded-lg font-medium transition-colors shadow-sm"
-          >
-            Contacto
-          </a>
-        </nav>
+          <div className="pt-2">
+            <a
+              href="#contacto"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-sm font-medium text-white bg-blue-600 hover:bg-blue-500 transition-colors"
+            >
+              <span>Hablemos</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
       )}
     </header>
   );
