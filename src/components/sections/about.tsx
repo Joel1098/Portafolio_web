@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function About() {
   return (
-    <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+    <div className="max-w-6xl mx-auto">
       
       {/* Columna de la Fotografía */}
       <div className="flex-shrink-0">

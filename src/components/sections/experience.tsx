@@ -1,3 +1,9 @@
+"use client"
+
+import { GlassCard } from "@/components/ui/GlassCard";
+import { FadeIn, StaggerGrid, StaggerItem } from "@/components/ui/Motion";
+import { Briefcase, Building2, Calendar } from "lucide-react";
+
 export function Experience() {
   const jobs = [
     {
@@ -35,34 +41,55 @@ export function Experience() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="space-y-8">
-        {jobs.map((job, index) => (
-          <div 
-            key={index} 
-            className="group relative flex flex-col md:flex-row gap-6 md:gap-12 bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all"
-          >
-            {/* Columna de Fechas (Izquierda en Desktop) */}
-            <div className="md:w-1/4 flex-shrink-0 pt-1">
-              
+    <section id="experiencia" className="py-16 max-w-6xl mx-auto px-4">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        {/* Columna Izquierda: Título y Contexto (Sticky en escritorio) */}
+        <div className="lg:col-span-4 lg:sticky lg:top-24">
+          <FadeIn>
+            <div className="flex flex-col gap-2">
+              <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+                Experiencia Profesional
+              </h2>
             </div>
+          </FadeIn>
+        </div>
 
-            {/* Columna de Contenido (Derecha) */}
-            <div className="md:w-3/4">
-              <h3 className="text-xl font-bold text-slate-900 mb-1">
-                {job.role} ({job.period})</h3>
-              <h4 className="text-lg font-medium text-blue-600 mb-4">
-                {job.company}
-              </h4>
-              <ul className="text-slate-600 mb-6 leading-relaxed">
-                {job.description.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ))}
+        {/* Columna Derecha: Tarjetas de Experiencia */}
+        <div className="lg:col-span-8">
+          <StaggerGrid className="space-y-6">
+            {jobs.map((exp, index) => (
+              <StaggerItem key={index}>
+                <GlassCard>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 ">
+                    <div>
+                      <h3 className="text-lg font-bold text-white tracking-tight flex items-center gap-3">
+                        <Briefcase className="w-4 h-4 text-blue-400 shrink-0" />
+                        {exp.role}
+                      </h3>
+                      <div className="flex items-center gap-2 mt-1 text-slate-400 text-xs sm:text-sm">
+                        <Building2 className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                        <span className="font-medium text-slate-300">{exp.company}</span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800/80 text-xs font-medium text-blue-300 w-fit">
+                      <Calendar className="w-3 h-3" />
+                      <span>{exp.period}</span>
+                    </div>
+                  </div>
+
+                  <p className="mt-4 text-xs sm:text-sm text-slate-300 font-medium">
+                    {exp.description}
+                  </p>
+
+                </GlassCard>
+              </StaggerItem>
+            ))}
+          </StaggerGrid>
+        </div>
+
       </div>
-    </div>
+    </section>
   );
 }

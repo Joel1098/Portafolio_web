@@ -1,16 +1,21 @@
+"use client";
+
+import { FadeIn } from "@/components/ui/Motion";
+
 export function Education() {
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:shadow-md transition-shadow">
-        <div>
-          <h3 className="text-xl font-bold text-slate-900">
-             ESCOM, IPN (2020 - 2025)
-          </h3>
-          <p className="text-blue-600 font-medium mt-1">
-            Título Universitario en Ingeniería en Sistemas Computacionales
-          </p>
-        </div>
-      </div>
-    </div>
+    <section id="experiencia" className="max-w-6xl mx-auto px-4">
+         <FadeIn>
+            <div className="flex flex-col gap-2">
+                  <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+                     Educación
+                  </h2>
+                <h4 className="text-slate-400 max-w-2xl text-sm md:text-base">
+             ESCOM, IPN (2020 - 2025) | Título Universitario en Ingeniería en Sistemas Computacionales
+          </h4>
+            </div>
+          </FadeIn>
+          
+    </section>
   );
 }
