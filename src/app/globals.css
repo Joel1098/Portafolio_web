@@ -1,16 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
 
 @layer base {
   body {
-    font-family: var(--font-jakarta), sans-serif;
+    @apply font-primary bg-primary text-white leading-loose;
   }
+  html {
+  scroll-behavior: smooth;
 }
-
-.bg-ambient-grid {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }

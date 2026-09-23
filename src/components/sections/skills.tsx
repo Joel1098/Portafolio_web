@@ -66,12 +66,9 @@ export function Skills() {
     <section id="habilidades" className="max-w-6xl mx-auto px-4">
      <FadeIn>
         <div className="flex flex-col gap-2">
-              <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+              <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">
                  Habilidades técnicas y herramientas
               </h2>
-          <p className="text-slate-400 max-w-2xl text-sm md:text-base">
-            Conjunto de tecnologías en las que me desempeño enfocadas en el procesamiento y anáisis de datos y el desarrollo de software escalable.
-          </p>
         </div>
       </FadeIn>
 

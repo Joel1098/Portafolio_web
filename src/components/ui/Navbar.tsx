@@ -1,6 +1,8 @@
 "use client";
 
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { handleSmoothScroll } from "@/utils";
+import { ArrowUpRight, Download, Menu, X } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const navItems = [
@@ -17,14 +19,13 @@ const navItems = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const cvPath = "/cv/CV_Joel_Dorantes.pdf";
+
+  
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -32,53 +33,56 @@ export function Navbar() {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-slate-950/80 backdrop-blur-md border-b border-slate-800/60 shadow-lg shadow-black/20 py-3.5"
-          : "bg-transparent py-5"
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-        {/* Logo / Nombre */}
-        <a
-          href="#inicio"
-          className="flex items-center gap-2 text-white font-bold tracking-tight text-lg group"
-        >
-          <span>
-            Joel<span className="text-blue-400">Dorantes</span>
-          </span>
-        </a>
+   <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-3 transition-all duration-300">
+      <div
+        className={`max-w-6xl mx-auto w-full flex items-center justify-between px-4 sm:px-6 py-2.5 rounded-2xl transition-all duration-300 ${
+          scrolled
+            ? "bg-slate-950/90 backdrop-blur-xl border border-slate-800/80 shadow-2xl shadow-black/50"
+            : "bg-slate-900/60 backdrop-blur-md border border-slate-800/50"
+        }`}
+      >
+        <Link href="#inicio" 
+        onClick={(e) => handleSmoothScroll(e, "#inicio")}
+        className="flex items-center gap-2.5 shrink-0 group">
+          
+          
+          <div className="flex flex-col">
+            <span className="text-sm font-bold text-white tracking-wide leading-none">
+              Joel<span className="text-blue-400">Dorantes</span>
+            </span>
+          </div>
+        </Link>
 
-        {/* Links Escritorio */}
-        <nav className="hidden md:flex items-center gap-1 bg-slate-900/50 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-sm">
+        {/* Enlaces de Navegación (Visibles a partir de breakpoint 'sm') */}
+        <nav className="hidden sm:flex items-center gap-1 bg-slate-950/40 p-1.5 rounded-xl border border-slate-800/60">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="px-4 py-1.5 text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-all"
+              className="px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition-all"
             >
               {item.name}
             </a>
           ))}
         </nav>
 
-        {/* Botón CTA derecho (Escritorio) */}
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="#contacto"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-medium text-white bg-blue-600 hover:bg-blue-500 transition-all shadow-md shadow-blue-600/20 active:scale-95"
+        {/* Botón CTA (Escritorio) */}
+        <div className="hidden sm:flex items-center gap-3 shrink-0">
+          <Link
+            href={cvPath}
+            download="CV_Joel_Dorantes.pdf"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all shadow-md shadow-blue-600/20 active:scale-95 border border-blue-400/30"
           >
-            <span>Hablemos</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </a>
+            <span>Descargar CV</span>
+            <Download className="w-3.5 h-3.5" />
+          </Link>
         </div>
 
-        {/* Botón Menú Móvil */}
+        {/* Botón Menú Móvil (Solo pantallas muy pequeñas) */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-slate-300 hover:text-white rounded-lg bg-slate-900/60 border border-slate-800 focus:outline-none"
-          aria-label="Toggle menu"
+          className="sm:hidden p-2 text-slate-300 hover:text-white rounded-xl bg-slate-900/80 border border-slate-800"
+          aria-label="Abrir menú"
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -86,27 +90,25 @@ export function Navbar() {
 
       {/* Menú Desplegable Móvil */}
       {mobileMenuOpen && (
-        <div className="md:hidden px-4 pt-3 pb-6 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800 mt-2 space-y-2">
+        <div className="sm:hidden max-w-6xl mx-auto mt-2 p-4 rounded-2xl bg-slate-950/95 backdrop-blur-2xl border border-slate-800 shadow-2xl space-y-2">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-slate-800/60 hover:text-blue-400 transition-colors"
+              className="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-slate-900 hover:text-blue-400 transition-all"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
-          <div className="pt-2">
-            <a
-              href="#contacto"
-              onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-sm font-medium text-white bg-blue-600 hover:bg-blue-500 transition-colors"
-            >
-              <span>Hablemos</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
-          </div>
+          <a
+            href="#contacto"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center justify-center gap-2 w-full mt-3 py-2.5 rounded-xl text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500"
+          >
+            <span>Contacto</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
         </div>
       )}
     </header>

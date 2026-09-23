@@ -9,25 +9,29 @@ export function Contact() {
   return (
     <footer id="contacto" className="pt-20 pb-12 max-w-6xl mx-auto px-4 sm:px-6 space-y-16">
       <FadeIn>
+        <div className="flex flex-col gap-2">
+              <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">
+                Contáctame
+              </h2>
+            </div>
         <GlassCard className="relative overflow-hidden p-8 md:p-12 border-blue-500/20 bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-950/80">
           {/* Luz de fondo acentuada */}
           <div className="absolute -top-24 -right-24 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            {/* Texto y propuesta */}
             <div className="lg:col-span-7 space-y-4">
               
               <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-xl">
-                Me encuentro en busca de nuevas oportunidades dentro de los campos de Ingeniería de Datos, Backend y Análisis. 
-                Ponte en contacto conmigo para discutir cómo puedo contribuir a tu equipo y proyectos. Estoy abierto a roles en cualquier modalidad, y me comprometo a responder rápidamente a tus mensajes.
+                Me encuentro en busca de nuevas oportunidades dentro dentro de la Ingeniería y Análisis de Datos. 
+                Ponte en contacto conmigo, estoy abierto a roles en cualquier modalidad, y me comprometo a responder rápidamente a tus mensajes.
               </p>
 
             </div>
 
-            {/* Enlaces de Acción */}
             <div className="lg:col-span-5 flex flex-col gap-3">
               <h3 className="text-lg font-bold text-white tracking-tight">
-                Puedes comunicarte conmigo por medio de correo electrónico</h3>
+                Comunicate conmigo por medio de correo electrónico, en mis redes sociales u observar mis proyectos en GitHub.
+              </h3>
               <a
                 href="mailto:joeldgjo98@gmail.com"
                 className="flex items-center justify-between p-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-all shadow-lg shadow-blue-600/20 group"
@@ -39,9 +43,7 @@ export function Contact() {
               </a>
 
               <div className="grid grid-cols-2 gap-3">
-                <h3 className="text-lg font-bold text-white tracking-tight col-span-2">
-                  También puedes encontrarme en mis redes sociales y echar un vistazo a mis proyectos y contribuciones en GitHub.
-                </h3>
+               
                 <a
                   href="https://www.linkedin.com/in/joel-ernesto-dorantes-guerrero-72b7841a2/"
                   target="_blank"
@@ -69,10 +71,10 @@ export function Contact() {
 
       {/* Pie de página inferior */}
       <div className="pt-8 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-        <p>© 2026 Joel Dorantes. Desarrollado con Next.js, TypeScript y Tailwind CSS.</p>
+        <p>© 2026 Joel Dorantes. Todos los derechos reservados.</p>
         <div className="flex items-center gap-4">
           <a href="#inicio" className="hover:text-slate-300 transition-colors">
-            Volver arriba ↑
+            Volver al inicio ↑
           </a>
         </div>
       </div>

@@ -1,12 +1,15 @@
 
+
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
+import type { ReactNode } from "react";
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({
+
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-jakarta",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-jetbrains-mono",
 });
 
 export const metadata: Metadata = {
@@ -14,14 +17,10 @@ export const metadata: Metadata = {
   description: "Portafolio profesional de Ingeniería de Datos y Desarrollo Backend.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="es" className={`${jakarta.variable} scroll-smooth`}>
-      <body className="font-sans bg-slate-950 text-slate-100 antialiased selection:bg-blue-500 selection:text-white">
+    <html lang="es">
+      <body className={jetbrainsMono.variable}>
         {children}
       </body>
     </html>

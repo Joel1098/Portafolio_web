@@ -24,12 +24,9 @@ export function Projects() {
     <section id="proyectos" className="max-w-6xl mx-auto px-4">
          <FadeIn>
             <div className="flex flex-col gap-2">
-              <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+              <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">
                 Proyectos
               </h2>
-              <p className="text-slate-400 max-w-2xl text-sm md:text-base">
-                Proyectos que he desarrollado enfocados en el procesamiento y análisis de datos y el desarrollo de software escalable.
-              </p>
             </div>
           </FadeIn>
     
@@ -63,9 +60,9 @@ export function Projects() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer" 
-              className="inline-flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors pt-4 border-t border-slate-100"
+              className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-blue-600 transition-colors pt-4 border-t border-slate-100"
             >
-              <FaGithub className="w-4 h-4" />
+              <FaGithub className="w-4 h-4 text-white" />
               <span>Ver repositorio</span>
               <ExternalLink className="w-3.5 h-3.5 ml-auto opacity-60" />
             </a>

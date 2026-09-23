@@ -26,4 +26,5 @@ export function GlassCard({ children, className = "", onClick }: GlassCardProps)
       <div className="relative z-10">{children}</div>
     </motion.div>
   );
+  
 }
