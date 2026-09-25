@@ -1,7 +1,8 @@
 "use client";
 
+
 import { handleSmoothScroll } from "@/utils";
-import { ArrowUpRight, Download, Menu, X } from "lucide-react";
+import { Eye, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -53,7 +54,6 @@ export function Navbar() {
           </div>
         </Link>
 
-        {/* Enlaces de Navegación (Visibles a partir de breakpoint 'sm') */}
         <nav className="hidden sm:flex items-center gap-1 bg-slate-950/40 p-1.5 rounded-xl border border-slate-800/60">
           {navItems.map((item) => (
             <a
@@ -69,12 +69,11 @@ export function Navbar() {
         {/* Botón CTA (Escritorio) */}
         <div className="hidden sm:flex items-center gap-3 shrink-0">
           <Link
-            href={cvPath}
-            download="CV_Joel_Dorantes.pdf"
+            href={cvPath} target="_blank" rel="noopener noreferrer"
             className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all shadow-md shadow-blue-600/20 active:scale-95 border border-blue-400/30"
           >
-            <span>Descargar CV</span>
-            <Download className="w-3.5 h-3.5" />
+            <span>Ver CV</span>
+            <Eye className="w-4 h-4" />
           </Link>
         </div>
 
@@ -101,14 +100,13 @@ export function Navbar() {
               {item.name}
             </Link>
           ))}
-          <a
-            href="#contacto"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center justify-center gap-2 w-full mt-3 py-2.5 rounded-xl text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500"
+          <Link
+            href={cvPath} target="_blank" rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 w-full mt-3 py-2.5 rounded-xl text-sm font-semibold text-white bg-blue-600 hover:bg-blue-400"
           >
-            <span>Contacto</span>
-            <ArrowUpRight className="w-4 h-4" />
-          </a>
+            <span>Ver CV</span>
+            <Eye className="w-4 h-4" />
+          </Link>
         </div>
       )}
     </header>

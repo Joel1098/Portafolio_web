@@ -2,8 +2,11 @@
 
 import { GlassCard } from "@/components/ui/GlassCard";
 import { FadeIn } from "@/components/ui/Motion";
-import { Mail } from "lucide-react";
+import { Download, Mail } from "lucide-react";
+import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
+
+const cvPath = "/CV_Joel_Dorantes.pdf";
 
 export function Contact() {
   return (
@@ -11,11 +14,11 @@ export function Contact() {
       <FadeIn>
         <div className="flex flex-col gap-2">
               <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-6">
-                Contáctame
+                Contacto
               </h2>
             </div>
         <GlassCard className="relative overflow-hidden p-8 md:p-12 border-blue-500/20 bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-950/80">
-          {/* Luz de fondo acentuada */}
+          
           <div className="absolute -top-24 -right-24 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
@@ -25,12 +28,22 @@ export function Contact() {
                 Me encuentro en busca de nuevas oportunidades dentro dentro de la Ingeniería y Análisis de Datos. 
                 Ponte en contacto conmigo, estoy abierto a roles en cualquier modalidad, y me comprometo a responder rápidamente a tus mensajes.
               </p>
-
+              <h2>Aquí puedes descargar mi currículum:</h2>
+              <div className="grid grid-cols-2 gap-3">
+              <Link
+            href={cvPath}
+            download="CV_Joel_Dorantes.pdf"
+            className="flex items-center justify-center gap-2 p-3.5 rounded-xl font-semibold text-white bg-cyan-700 from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-cyan-500 transition-all shadow-md shadow-blue-600/20 active:scale-95 border border-blue-400/30"
+          >
+            <span>Descargar CV</span>
+            <Download className="w-5 h-5" />
+          </Link>
+</div>
             </div>
 
             <div className="lg:col-span-5 flex flex-col gap-3">
               <h3 className="text-lg font-bold text-white tracking-tight">
-                Comunicate conmigo por medio de correo electrónico, en mis redes sociales u observar mis proyectos en GitHub.
+                Puedes ponerte en contacto conmigo por estos medios:
               </h3>
               <a
                 href="mailto:joeldgjo98@gmail.com"
@@ -69,7 +82,6 @@ export function Contact() {
         </GlassCard>
       </FadeIn>
 
-      {/* Pie de página inferior */}
       <div className="pt-8 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
         <p>© 2026 Joel Dorantes. Todos los derechos reservados.</p>
         <div className="flex items-center gap-4">

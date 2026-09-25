@@ -20,7 +20,7 @@ export function Experience() {
     {
       role: "Programador Junior",
       company: "Fixat",
-      period: "Marzo 2024 - Junio 2025",
+      period: "Marzo 2025 - Junio 2025",
       description: [
       "Trabajé en nuevos requerimientos con Python como lenguaje de programación pricipal y siguiendo una arquitectura de microservicios.",
       "Desarrollé soluciones backend mediante la aplicación de lambdas en AWS.",
@@ -30,7 +30,7 @@ export function Experience() {
     {
       role: "Frontend QA Tester",
       company: "Grupo Carso",
-      period: "Marzo 2023 - Septiembre 2024",
+      period: "Marzo 2024 - Septiembre 2024",
       description: [
       "Realizaba la ejecución de pruebas manuales, pruebas de humo y matrices de pruebas.",
       "Coordinaba comunicación con equipos de desarrollo dentro del proyecto Claro Drive para el seguimiento y reporte de incidencias antes, durante y después de despliegues a producción.",
@@ -42,10 +42,7 @@ export function Experience() {
 
   return (
     <section id="experiencia" className="py-16 max-w-6xl mx-auto px-4">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        {/* Columna Izquierda: Título y Contexto (Sticky en escritorio) */}
-        <div className="lg:col-span-4 lg:sticky lg:top-24">
           <FadeIn>
             <div className="flex flex-col gap-2">
               <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
@@ -53,7 +50,6 @@ export function Experience() {
               </h2>
             </div>
           </FadeIn>
-        </div>
 
         {/* Columna Derecha: Tarjetas de Experiencia */}
         <div className="lg:col-span-8">
@@ -73,7 +69,7 @@ export function Experience() {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800/80 text-xs font-medium text-blue-300 w-fit">
+                    <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800/80 text-xs font-normal text-blue-300 w-fit">
                       <Calendar className="w-3 h-3" />
                       <span>{exp.period}</span>
                     </div>
@@ -89,7 +85,6 @@ export function Experience() {
           </StaggerGrid>
         </div>
 
-      </div>
     </section>
   );
 }
