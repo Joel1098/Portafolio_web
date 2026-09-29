@@ -1,5 +1,5 @@
 
-import { ChartLine, Cloud, Code2, Container, Database, FolderKanban, GitBranch, Handshake, MonitorCog } from "lucide-react";
+import { Cloud, Code2, Database, FolderKanban, Handshake, MonitorCog } from "lucide-react";
 
 export const categories = [
     {
@@ -13,37 +13,22 @@ export const categories = [
       tools: ["Mysql", "PostgreSQL", "SQLAlchemy", "MongoDB"]
     },
     {
-      title: "Procesamiento de datos",
+      title: "Procesamiento y Análisis de datos",
       icon: MonitorCog,
-      tools: ["Pandas", "PySpark", "Scikit-learn", "Apache Parquet" ]
+      tools: ["Pandas", "PySpark", "Scikit-learn", "Apache Parquet", "SAS" ]
     },
      {
-      title: "Análisis de datos",
-      icon: ChartLine,
-      tools: ["SAS"]
-    },
-     {
-      title: "Gestión de proyectos",
+      title: "Gestión y Control de Versiones",
       icon: FolderKanban,
-      tools: ["Agile", "Scrum", "Jira", "Confluence"]
+      tools: ["Git", "GitHub","Bitbucket", "Scrum", "Jira", "Confluence"]
     },
      {
-      title: "Control de versiones ",
-      icon: GitBranch,
-      tools: ["Git", "GitHub","Bitbucket", ]
-    },
-     {
-      title: "Cómputo en la nube",
+      title: "Infraestructura y Nube",
       icon: Cloud,
-      tools: ["AWS", "Lambda", "SQS", "SNS", "S3"]
+      tools: ["Docker", "Airflow","AWS"]
     },
      {
-      title: "Contenedores y orquestación",
-      icon: Container,
-      tools: ["Docker", "Airflow"]
-    },
-     {
-      title: "Aplicación al negocio",
+      title: "Visión de Negocio y Analítica",
       icon: Handshake,
       tools: ["Métricas de negocio", "Análisis de procesos", "KPIs", "Dashboards"]
     }

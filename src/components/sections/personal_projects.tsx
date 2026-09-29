@@ -1,10 +1,12 @@
 "use client";
+import { useLanguage } from "@/components/providers/LanguageContext";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { FadeIn, StaggerGrid, StaggerItem } from "@/components/ui/Motion";
 import { ExternalLink, FolderGit2 } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 
 export function Projects() {
+  const {t} = useLanguage();
   const projects = [
     {
       title: "Pipeline-de-datos-con-Spark",
@@ -23,9 +25,9 @@ export function Projects() {
     <section id="proyectos" className="max-w-6xl mx-auto px-4 py-16">
       <FadeIn>
         <div className="flex flex-col gap-2 mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-            Proyectos
-          </h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+          {t("projects_title")}
+        </h2>
         </div>
       </FadeIn>
 

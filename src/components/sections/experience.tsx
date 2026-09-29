@@ -1,10 +1,12 @@
 "use client"
 
+import { useLanguage } from "@/components/providers/LanguageContext";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { FadeIn, StaggerGrid, StaggerItem } from "@/components/ui/Motion";
 import { Briefcase, Building2, Calendar } from "lucide-react";
 
 export function Experience() {
+  const {t} = useLanguage();
   const jobs = [
     {
       role: "Spec Analytics Analyst",
@@ -44,9 +46,9 @@ export function Experience() {
     <section id="experiencia" className="py-16 max-w-6xl mx-auto px-4">
         
           <FadeIn>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 mb-8">
               <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-                Experiencia Profesional
+                {t("experience_title")}
               </h2>
             </div>
           </FadeIn>
@@ -75,9 +77,11 @@ export function Experience() {
                     </div>
                   </div>
 
-                  <p className="mt-4 text-xs sm:text-sm text-slate-300 font-medium">
-                    {exp.description}
-                  </p>
+                  <u className="mt-4 text-xs sm:text-sm text-slate-300 font-medium space-y-4 no-underline">
+                    {exp.description.map((desc, index) => (
+                      <ol key={index}>{desc}</ol>
+                      ))}
+                  </u>
 
                 </GlassCard>
               </StaggerItem>

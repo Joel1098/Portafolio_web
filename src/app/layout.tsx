@@ -1,5 +1,6 @@
 
 
+import { LanguageProvider } from "@/components/providers/LanguageContext";
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import type { ReactNode } from "react";
@@ -21,7 +22,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es">
       <body className={jetbrainsMono.variable}>
+        <LanguageProvider>
         {children}
+        </LanguageProvider>
       </body>
     </html>
   );

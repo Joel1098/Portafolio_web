@@ -1,26 +1,29 @@
 "use client";
 
 
+import { DictionaryKey, useLanguage } from "@/components/providers/LanguageContext";
 import { handleSmoothScroll } from "@/utils";
 import { Eye, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { LanguageToggle, LanguageToggleMobile } from "./LanguageToggle";
 
-const navItems = [
-
-        {name: "Inicio", href: "#inicio"},
-        {name: "Resumen", href: "#sobre-mi"},
-        {name: "Educación", href: "#educacion"},
-        {name: "Habilidades", href: "#habilidades"},
-        {name: "Experiencia", href: "#experiencia"},
-        {name: "Proyectos", href: "#proyectos"},
-        {name: "Contacto", href: "#contacto"},
-
+const navItems: { key: DictionaryKey; href: string }[] = [
+  { key: "nav_home", href: "#inicio" },
+  { key: "nav_about", href: "#sobre-mi" },
+  { key: "nav_skills", href: "#habilidades" },
+  { key: "nav_experience", href: "#experiencia" },
+  { key: "nav_projects", href: "#proyectos" },
+  { key: "nav_education", href: "#educacion" },
+  { key: "nav_contact", href: "#contacto" },
 ];
 export function Navbar() {
+  const {t, language} = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const cvPath = "/cv/CV_Joel_Dorantes.pdf";
+  const cvPath = language === "es" 
+    ? "/cv/CV_Joel_Dorantes.pdf" 
+    : "/cv/Resume_Joel_Dorantes.pdf";
 
   
 
@@ -57,11 +60,11 @@ export function Navbar() {
         <nav className="hidden sm:flex items-center gap-1 bg-slate-950/40 p-1.5 rounded-xl border border-slate-800/60">
           {navItems.map((item) => (
             <a
-              key={item.name}
+              key={item.key}
               href={item.href}
               className="px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition-all"
             >
-              {item.name}
+              {t(item.key)}
             </a>
           ))}
         </nav>
@@ -72,9 +75,10 @@ export function Navbar() {
             href={cvPath} target="_blank" rel="noopener noreferrer"
             className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all shadow-md shadow-blue-600/20 active:scale-95 border border-blue-400/30"
           >
-            <span>Ver CV</span>
+            <span>{t("view_cv")}</span>
             <Eye className="w-4 h-4" />
           </Link>
+          <LanguageToggle />
         </div>
 
         {/* Botón Menú Móvil (Solo pantallas muy pequeñas) */}
@@ -92,21 +96,22 @@ export function Navbar() {
         <div className="sm:hidden max-w-6xl mx-auto mt-2 p-4 rounded-2xl bg-slate-950/95 backdrop-blur-2xl border border-slate-800 shadow-2xl space-y-2">
           {navItems.map((item) => (
             <Link
-              key={item.name}
+              key={item.key}
               href={item.href}
               onClick={() => setMobileMenuOpen(false)}
               className="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-slate-900 hover:text-blue-400 transition-all"
             >
-              {item.name}
+              {t(item.key)}
             </Link>
           ))}
           <Link
             href={cvPath} target="_blank" rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full mt-3 py-2.5 rounded-xl text-sm font-semibold text-white bg-blue-600 hover:bg-blue-400"
           >
-            <span>Ver CV</span>
+            <span>{t("view_cv")}</span>
             <Eye className="w-4 h-4" />
           </Link>
+          <LanguageToggleMobile />
         </div>
       )}
     </header>

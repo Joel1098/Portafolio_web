@@ -1,22 +1,24 @@
 "use client";
 
+import { useLanguage } from "@/components/providers/LanguageContext";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { FadeIn, StaggerGrid, StaggerItem } from "@/components/ui/Motion";
 import { TechIcon } from "@/components/ui/TechIcon";
 import { categories } from "@/Data/Skills";
 
 export function Skills() {
+  const {t} = useLanguage();
   return (
     <section id="habilidades" className="max-w-6xl mx-auto px-4 py-16">
       <FadeIn>
         <div className="flex flex-col gap-2 mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-            Habilidades técnicas y área de especialización
+            {t("skills_title")}
           </h2>
         </div>
       </FadeIn>
 
-      <StaggerGrid className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
+      <StaggerGrid className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3">
         {categories.map((category, index) => {
           const Icon = category.icon;
           return (
@@ -36,7 +38,7 @@ export function Skills() {
                     {category.tools.map((skill) => (
                       <div
                         key={skill}
-                        className="group flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-900/70 border border-slate-800/80 hover:border-blue-500/40 hover:bg-slate-800/60 transition-all duration-300"
+                        className="group flex items-center sm:justify-center gap-2.5 p-2.5 rounded-xl bg-slate-900/70 border border-slate-800/80 hover:border-blue-500/40 hover:bg-slate-800/60 transition-all duration-300"
                       >
                         <div className="p-1.5 rounded-lg bg-slate-950 border border-slate-800/80 group-hover:scale-110 transition-transform flex-shrink-0">
                           <TechIcon name={skill} />

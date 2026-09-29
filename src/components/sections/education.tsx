@@ -1,10 +1,12 @@
 "use client";
+import { useLanguage } from "@/components/providers/LanguageContext";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { FadeIn, StaggerGrid, StaggerItem } from "@/components/ui/Motion";
 import { Calendar, GraduationCap } from "lucide-react";
 
 
 export function Education() {
+  const {t} = useLanguage();
   const educacion = [
     {
       title: "Instituto Politécnico Nacional (IPN)",
@@ -18,7 +20,7 @@ export function Education() {
          <FadeIn>
             < div className="flex flex-col gap-2 mb-8">
                   <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-                     Educación
+                     {t("nav_education")}
                   </h2>
           
             </div>
