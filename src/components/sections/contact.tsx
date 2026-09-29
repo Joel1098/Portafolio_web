@@ -79,7 +79,7 @@ export function Contact() {
               </div>
                <a
                 href="mailto:joeldgjo98@gmail.com"
-                className="flex items-center justify-center p-4 rounded-xl bg-white hover:bg-blue-700 text-slate-800 hover:text-white font-medium text-sm transition-all shadow-lg shadow-blue-600/20 group"
+                className="flex items-center justify-center p-4 rounded-xl bg-white hover:bg-blue-700 text-slate-900 hover:text-white font-medium text-sm transition-all shadow-lg shadow-blue-600/20 group"
               >
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5" />

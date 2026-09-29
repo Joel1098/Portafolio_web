@@ -30,7 +30,7 @@ export function EANDPProjects() {
     }
   ];
   return (
-    <section id="proyectos-escolares-y-profesionales" className="max-w-6xl mx-auto px-4 py-5">
+    <section id="proyectos-escolares-y-profesionales" className="max-w-6xl mx-auto px-4 py-4">
       <FadeIn>
         <div className="flex flex-col gap-2 mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">

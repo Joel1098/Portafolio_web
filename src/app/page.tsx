@@ -11,11 +11,12 @@ import { Navbar } from "@/components/ui/Navbar";
 export default function Home() {
   return (
     
-    <div className="bg-white text-slate-900 min-h-screen ">
+    <div className=" relative w-full min-h-screen bg-slate-950 text-slate-300 overflow-hidden ">
+       <div className="absolute top-2 left-1/2 -translate-x-1/2 max-w-[1000px] h-[300px] sm:h-[500px] bg-gradient-to-b from-blue-600/10 via-cyan-500/5 to-transparent blur-3xl pointer-events-none -z-10" />
     <Navbar /> 
       
-      <main id="inicio" className="relative min-h-screen bg-slate-950 text-slate-100 bg-ambient-grid overflow-hidden">
-      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-blue-600/10 via-cyan-500/5 to-transparent blur-3xl pointer-events-none -z-10" />
+      <main id="inicio" className="relative w-full">
+     
           <About />
           <Skills />
             <Experience />
