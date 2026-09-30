@@ -18,12 +18,15 @@ export const dictionary = {
     experience_title: "Experiencia Profesional",
     projects_title: "Proyectos Personales",
     professional_projects_title: "Proyectos Escolares y Laborales",
-    contact_description: "Puedes ponerte en contacto conmigo por estos medios:",
+    contact_label: "Puedes ponerte en contacto conmigo por estos medios:",
     cv_label: "Aquí puedes descargar mi currículum:",
     skills_title: "Habilidades técnicas y área de especialización",
     top_button: "Volver al inicio",
     rights_reserved: "Todos los derechos reservados",
     send_email: "Enviar Correo Electrónico",
+    description_title: "Descripción",
+    education_title: "Título en Ingeniería en Sistemas Computacionales",
+    contact_description: "Me encuentro en busca de nuevas oportunidades dentro dentro de la Ingeniería y Análisis de Datos. Ponte en contacto conmigo, estoy abierto a roles en cualquier modalidad, y me comprometo a responder rápidamente a tus mensajes."
 
     
   },
@@ -40,13 +43,15 @@ export const dictionary = {
     experience_title: "Professional Experience",
     projects_title: "Personal Projects",
     professional_projects_title: "Academic and Professional Projects",
-    contact_description: "You can get in touch with me through these channels:",
+    contact_label: "You can get in touch with me through these channels:",
     cv_label: "Here you can download my resume:",
     skills_title: "Technical skills and area of specialization",
     top_button: "Back to top",
     rights_reserved: "All rights reserved",
     send_email: "Send Email",
-    
+    description_title: "Description",
+    education_title: "Bachelor's Degree in Computer Systems Engineering",
+    contact_description: "I am seeking new opportunities in the field of Engineering and Data Analysis. Feel free to reach out to me, I am open to roles in any modality, and I commit to responding promptly to your messages."
   },
 } as const;
 

@@ -63,10 +63,10 @@ export function TechIcon({ name }: { name: string }) {
   if (lowerName.includes("airflow")) return <SiApacheairflow className="w-8 h-8 text-teal-400" />;
   if (lowerName.includes("agile")) return <Workflow className="w-8 h-8 text-cyan-400" />;
   if (lowerName.includes("scrum")) return <DiScrum className="w-8 h-8 text-cyan-400" />;
-  if (lowerName.includes("métrica")) return <SiBaremetrics className="w-8 h-8 text-emerald-400" />;
+  if (lowerName.includes("métrica") || lowerName.includes("business")) return <SiBaremetrics className="w-8 h-8 text-emerald-400" />;
   if (lowerName.includes("kpis")) return <SiSimpleanalytics className="w-8 h-8 text-orange-500" />;
   if (lowerName.includes("dashboards")) return <MdDashboard className="w-8 h-8 text-shadow-cyan-600" />;
-  if (lowerName.includes("proceso")) return <BiAnalyse className="w-8 h-8 text-blue-400" />;
+  if (lowerName.includes("proceso") || lowerName.includes("process")) return <BiAnalyse className="w-8 h-8 text-blue-400" />;
   if (lowerName.includes("sas")) return <IoAnalyticsOutline className="w-8 h-8 text-blue-400" />;
 
   return <CheckCircle2 className="w-8 h-8 text-blue-400" />;

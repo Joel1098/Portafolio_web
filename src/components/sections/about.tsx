@@ -1,6 +1,15 @@
+"use client";
+
+import { useLanguage } from "@/components/providers/LanguageContext";
+import { aboutData } from "@/Data/index";
+import { getLocalized } from "@/lib/utils";
 import Image from "next/image";
 
 export function About() {
+
+  const {t, language} = useLanguage();
+
+  
   return (
     <section id="sobre-mi" className="pt-28 sm:pt-36 pb-16 max-w-6xl mx-auto px-4 sm:px-6">
       <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
@@ -25,16 +34,23 @@ export function About() {
         </div>
 
         <div className="flex-1 bg-[#23232b] p-8 md:p-10 rounded-3xl border border-white/10 shadow-xl hover:border-blue-500/30 transition-all duration-300">
-          <h2 className="text-2xl font-bold text-white mb-4">Descripción</h2>
-          <p className="text-slate-300 font-normal leading-relaxed text-base sm:text-md text-justify">
-            Soy ingeniero en sistemas computacionales con sólida experiencia en el desarrollo backend y análisis de datos.
-            <br /><br />
-            Mi objetivo es consolidarme en el área de ingeniería y análisis de datos madiante la ejecución de procesos ETL en entornos Big Data, 
-            combinando técnicas con visión de negocio para optimizar procesos y la toma de decisiones.
-            <br /><br />
-            Tengo facilidad de comunicación, me gusta trabajar en la resolución de problemas y me adapto rápidamente a nuevas situaciones, 
-            lo que me permite impulsar la innovación en proyectos con alta escalabilidad.
-          </p>
+          <h2 className="text-2xl font-bold text-white mb-4">{
+            t("description_title")
+          }</h2>
+          {aboutData.map((about, index) => {
+    const description = getLocalized(about.description, language);
+
+    return (
+      <div key={index} className="space-y-4">
+          {description.map((paragraph, idx) => (
+            <p key={idx} className="text-slate-300 text-sm md:text-base leading-relaxed">
+              {paragraph}
+            </p>
+          ))
+        }
+      </div>
+    );
+  })}
         </div>
 
       </div>

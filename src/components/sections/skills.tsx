@@ -4,10 +4,26 @@ import { useLanguage } from "@/components/providers/LanguageContext";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { FadeIn, StaggerGrid, StaggerItem } from "@/components/ui/Motion";
 import { TechIcon } from "@/components/ui/TechIcon";
-import { categories } from "@/Data/Skills";
+import { SkillsData } from "@/Data/index";
+import { getLocalized } from "@/lib/utils";
+import { Cloud, Code2, Database, FolderKanban, Handshake, MonitorCog } from "lucide-react";
+
+
+// Mapeo de íconos según el nombre de la categoría
+  const ICON_MAP = {
+  code: Code2,
+  database: Database,
+  FolderKanban: FolderKanban,
+  handshake: Handshake,
+  monitorCog: MonitorCog,
+  cloud: Cloud
+};
+
 
 export function Skills() {
-  const {t} = useLanguage();
+  const {t, language} = useLanguage();
+
+  
   return (
     <section id="habilidades" className="max-w-6xl mx-auto px-4 py-16">
       <FadeIn>
@@ -19,15 +35,20 @@ export function Skills() {
       </FadeIn>
 
       <StaggerGrid className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3">
-        {categories.map((category, index) => {
-          const Icon = category.icon;
+        {SkillsData.map((category, index) => {
+
+          const title = getLocalized(category.title, language);
+          const tools = getLocalized(category.tools, language);
+          const Icon = ICON_MAP[category.icon as keyof typeof ICON_MAP] ?? Cloud;
+
+
           return (
             <StaggerItem key={index}>
               <GlassCard className="h-full flex flex-col justify-between p-6">
                 <div>
                   <div className="flex items-center justify-between mb-5 pb-3 border-b border-slate-800/80">
                     <h3 className="text-base font-bold text-white tracking-tight">
-                      {category.title}
+                      {title}
                     </h3>
                     <div className="p-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20">
                       <Icon className="w-4 h-4" />
@@ -35,10 +56,10 @@ export function Skills() {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    {category.tools.map((skill) => (
+                    {tools.map((skill) => (
                       <div
                         key={skill}
-                        className="group flex items-center sm:justify-center gap-2.5 p-2.5 rounded-xl bg-slate-900/70 border border-slate-800/80 hover:border-blue-500/40 hover:bg-slate-800/60 transition-all duration-300"
+                        className="group flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-900/70 border border-slate-800/80 hover:border-blue-500/40 hover:bg-slate-800/60 transition-all duration-300"
                       >
                         <div className="p-1.5 rounded-lg bg-slate-950 border border-slate-800/80 group-hover:scale-110 transition-transform flex-shrink-0">
                           <TechIcon name={skill} />

@@ -5,14 +5,6 @@
   --font-primary: jetbrains-Mono; 
   --color-primary: #020617;           
 }
-@screens {
-  --screen-sm: 640px;
-  --screen-md: 768px;
-  --screen-lg: 1024px;
-  --screen-xl: 1280px;
-  --screen-2xl: 1536px;
-}
-
 @layer base {
   body {
     @apply font-primary bg-primary text-white leading-loose;

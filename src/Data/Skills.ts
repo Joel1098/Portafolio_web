@@ -5,7 +5,7 @@ export const categories = [
     {
       title: "Lenguajes de programación",
       icon: Code2,
-      tools: ["Python", "C#", "JavaScript"]
+      tools: ["Python", "JavaScript"]
     },
     {
       title: "Bases de datos",
@@ -15,7 +15,7 @@ export const categories = [
     {
       title: "Procesamiento y Análisis de datos",
       icon: MonitorCog,
-      tools: ["Pandas", "PySpark", "Scikit-learn", "Apache Parquet", "SAS" ]
+      tools: ["Pandas", "PySpark", "Apache Parquet", "SAS" ]
     },
      {
       title: "Gestión y Control de Versiones",

@@ -32,8 +32,7 @@ export function Contact() {
             <div className="lg:col-span-7 space-y-4">
               
               <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-xl">
-                Me encuentro en busca de nuevas oportunidades dentro dentro de la Ingeniería y Análisis de Datos. 
-                Ponte en contacto conmigo, estoy abierto a roles en cualquier modalidad, y me comprometo a responder rápidamente a tus mensajes.
+                {t("contact_description")}
               </p>
               <h2>{t("cv_label")}</h2>
               <div className="grid grid-cols-2 gap-3">
@@ -50,7 +49,7 @@ export function Contact() {
 
             <div className="lg:col-span-5 flex flex-col gap-3">
               <h3 className="text-lg font-bold text-white tracking-tight">
-                {t("contact_description")}
+                {t("contact_label")}
               </h3>
               
 

@@ -11,7 +11,7 @@ export function Education() {
     {
       title: "Instituto Politécnico Nacional (IPN)",
       icon: GraduationCap,
-      description: "Escuela Superior de Cómputo (ESCOM) | Título en Ingeniería en Sistemas Computacionales",
+      description: "Escuela Superior de Cómputo (ESCOM)",
       period: "2020 - 2025"
     },
   ];
@@ -47,7 +47,7 @@ export function Education() {
                         </div>
                         </div>
                       <p className=" text-slate-400 leading-relaxed font-medium mb-4">
-                        {category.description}
+                        {category.description} - {t("education_title")}
                       </p>
                       </div>
                   
