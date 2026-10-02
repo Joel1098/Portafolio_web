@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+Este es un proyecto con el objetivo de tener un portafolio que pueda mostrar tanto proyectos personales, laborales y escolares. Se desarrolló utilizando TypeScript, TailwindCSS, Next y una serie de bibliotecas para animaciones, botones y diseños que me permitió darle estilo y forma a este proyecto. 
+
 First, run the development server:
 
 ```bash
