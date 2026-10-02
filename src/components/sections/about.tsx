@@ -12,7 +12,7 @@ export function About() {
   
   return (
     <section id="sobre-mi" className="pt-28 sm:pt-36 pb-16 max-w-6xl mx-auto px-4 sm:px-6">
-      <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-14">
         
         <div className="flex-shrink-0 group">
           <div className="relative p-1 rounded-3xl bg-gradient-to-tr to-transparent shadow-2xl transition-all duration-500">
@@ -33,10 +33,11 @@ export function About() {
           </div>
         </div>
 
-        <div className="flex-1 bg-[#23232b] p-8 md:p-10 rounded-3xl border border-white/10 shadow-xl hover:border-blue-500/30 transition-all duration-300">
-          <h2 className="text-2xl font-bold text-white mb-4">{
-            t("description_title")
-          }</h2>
+        <div className="flex-1 bg-[#23232b] p-8 md:p-10 rounded-3xl border border-white/10 shadow-xl hover:border-blue-500/30 transition-all duration-300 min-h-80 flex flex-col justify-start">
+          <h2 className="text-2xl font-bold text-white mb-4 min-h-8">{
+            t("description_title")}</h2>
+        
+          <div className="min-h-75 sm:min-h-55 lg:min-h-60 flex flex-col justify-start">
           {aboutData.map((about, index) => {
     const description = getLocalized(about.description, language);
 
@@ -51,6 +52,7 @@ export function About() {
       </div>
     );
   })}
+  </div>
         </div>
 
       </div>

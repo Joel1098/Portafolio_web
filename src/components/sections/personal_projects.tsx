@@ -63,7 +63,7 @@ export function Projects() {
                   className="group inline-flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-blue-400 transition-colors pt-4 border-t border-slate-800/80 mt-auto"
                 >
                   <FaGithub className="w-4 h-4 text-slate-300 group-hover:text-blue-400 transition-colors" />
-                  <span>Ver repositorio</span>
+                  <span>{t("view_repository")}</span>
                   <ExternalLink className="w-3.5 h-3.5 ml-auto opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
                 </a>
               </GlassCard>

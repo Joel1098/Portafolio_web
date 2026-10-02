@@ -21,6 +21,8 @@ export function Navbar() {
   const {t, language} = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+
   const cvPath = language === "es" 
     ? "/cv/CV_Joel_Dorantes.pdf" 
     : "/cv/Resume_Joel_Dorantes.pdf";
@@ -47,7 +49,7 @@ export function Navbar() {
       >
         <Link href="#inicio" 
         onClick={(e) => handleSmoothScroll(e, "#inicio")}
-        className="flex items-center gap-2.5 shrink-0 group">
+        className="flex items-center gap-2.5 shrink-0 group ">
           
           
           <div className="flex flex-col">
@@ -56,24 +58,22 @@ export function Navbar() {
             </span>
           </div>
         </Link>
-
-        <nav className="hidden sm:flex items-center gap-1 bg-slate-950/40 p-1.5 rounded-xl border border-slate-800/60">
+        <nav className="hidden  sm:flex items-center gap-1 bg-slate-950/40 p-1.5 rounded-xl border border-slate-800/60">
           {navItems.map((item) => (
             <a
               key={item.key}
               href={item.href}
-              className="px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition-all"
+              className="px-3 py-1.5 min-w-[90px] text-center text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition-all"
             >
               {t(item.key)}
             </a>
           ))}
         </nav>
-
         {/* Botón CTA (Escritorio) */}
         <div className="hidden sm:flex items-center gap-3 shrink-0">
           <Link
             href={cvPath} target="_blank" rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all shadow-md shadow-blue-600/20 active:scale-95 border border-blue-400/30"
+            className="flex items-center justify-center min-w-[130px] gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-white bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all shadow-md shadow-blue-600/20 active:scale-95 border border-blue-400/30"
           >
             <span>{t("view_cv")}</span>
             <Eye className="w-4 h-4" />

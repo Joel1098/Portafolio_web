@@ -26,6 +26,7 @@ export const dictionary = {
     send_email: "Enviar Correo Electrónico",
     description_title: "Descripción",
     education_title: "Título en Ingeniería en Sistemas Computacionales",
+    view_repository: "Ver Repositorio",
     contact_description: "Me encuentro en busca de nuevas oportunidades dentro dentro de la Ingeniería y Análisis de Datos. Ponte en contacto conmigo, estoy abierto a roles en cualquier modalidad, y me comprometo a responder rápidamente a tus mensajes."
 
     
@@ -39,6 +40,7 @@ export const dictionary = {
     nav_education: "Education",
     nav_contact: "Contact",
     view_cv: "View Resume",
+    view_repository: "View Repository",
     download_cv: "Download CV",
     experience_title: "Professional Experience",
     projects_title: "Personal Projects",

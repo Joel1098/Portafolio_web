@@ -9,11 +9,11 @@ export function LanguageToggle() {
   return (
     <button
       onClick={toggleLanguage}
-      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-xs font-semibold text-slate-300 hover:text-white transition-all cursor-pointer active:scale-95"
+      className="inline-flex items-center min-w-[80px] justify-center gap-2 px-3.5 py-0.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-l font-semibold text-slate-300 hover:text-white transition-all cursor-pointer active:scale-95"
       aria-label="Cambiar idioma"
       title={language === "es" ? "Switch to English" : "Cambiar a Español"}
     >
-      <Languages className="w-3.5 h-3.5 text-blue-400" />
+      <Languages className="w-4 h-4 text-blue-400" />
       <span className="uppercase tracking-wider font-mono">
         {language === "es" ? "EN" : "ES"}
       </span>

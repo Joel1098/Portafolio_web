@@ -41,7 +41,7 @@ export function Education() {
                         <div className="p-2.5 rounded-xl bg-blue-500/10 text-blue-400">
                           <Icon className="w-6" />
                         </div>
-                        <div className="flex items-center gap-1.5 px-3 py-1 rounded-4xl bg-slate-800/80 text-md text-blue-300 w-fit">
+                        <div className="flex items-center shrink-0 whitespace-nowrap gap-1.5 px-3 py-1 rounded-4xl bg-slate-800/80 text-md text-blue-300 w-fit">
                         <Calendar className="w-5 h-5" />
                         <span>{category.period}</span>
                         </div>

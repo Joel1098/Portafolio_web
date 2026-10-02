@@ -31,8 +31,9 @@ export function EANDPProjects() {
           return (
             <StaggerItem key={index}>
               <GlassCard className="h-full flex flex-col justify-between p-6">
+                <div className="flex flex-col h-full">
                 <div>
-                  <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="flex items-start justify-between gap-3 mb-3 min-h-14 sm:min-h-12">
                     <h3 className="text-lg font-bold text-white tracking-tight">
                       {title}
                     </h3>
@@ -40,30 +41,30 @@ export function EANDPProjects() {
                       <BriefcaseBusiness className="w-5 h-5" />
                     </div>
                   </div>
-
+                  <div className="mt-4 min-h-[250px] sm:min-h-[230px] flex flex-col items-start sm:flex-row sm:items-start">
                   <u className="text-xs text-slate-400 leading-relaxed no-underline space-y-4">
                     
                     {description.map((desc, index) => (
                         
-                        <ol key={index} className="flex items-start gap-2">
+                        <li key={index} className="flex items-start gap-2">
                           <BadgeCheck key={index} className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
                           {desc}
-                        </ol>
+                        </li>
                     ))}
                   </u>  
-
-                  <div className="flex flex-wrap gap-2 mb-4 py-8">
+                  </div>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-slate-800/40 flex flex-wrap gap-1.5 items-center">
                     {tools.map((skill: string) => (
                       <span
                         key={skill}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-cyan-800/80 text-slate-300 border border-slate-800 hover:border-blue-500/30 hover:text-white transition-all duration-200"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-[11px] font-medium bg-cyan-800/80 text-slate-300 border border-slate-800 hover:border-blue-500/30 hover:text-white transition-all duration-200 shrink-0"
                       >
                         <span>{skill}</span>
                       </span>
                     ))}
                   </div>
                 </div>
-
               </GlassCard>
             </StaggerItem>
           );

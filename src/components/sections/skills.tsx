@@ -27,7 +27,7 @@ export function Skills() {
   return (
     <section id="habilidades" className="max-w-6xl mx-auto px-4 py-16">
       <FadeIn>
-        <div className="flex flex-col gap-2 mb-8">
+        <div className="flex flex-col min-h-[70px] gap-2 mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
             {t("skills_title")}
           </h2>

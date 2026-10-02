@@ -34,8 +34,9 @@ const {t, language} = useLanguage();
 
              return(
               <StaggerItem key={index}>
-                <GlassCard>
-                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-4 border-b border-slate-800/60">
+                <GlassCard className="h-full flex flex-col justify-between">
+                  <div>
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-4 border-b border-slate-800/60 min-h-[70px]">
                     <div className="space-y-1">
                       <h3 className="text-lg font-bold text-white tracking-tight flex items-center gap-3">
                         <Briefcase className="w-4 h-4 text-blue-400 shrink-0" />
@@ -45,16 +46,13 @@ const {t, language} = useLanguage();
                         <Building2 className="w-3.5 h-3.5 text-slate-500 shrink-0" />
                         <span className="font-medium text-slate-300">{company}</span>
                       </div>
-                      
                     </div>
-                      <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800/80 text-xs font-normal text-blue-300 w-fit shrink-0 whitespace-nowrap sm:self-start">
+                      <div className="flex items-center shrink-0 gap-1.5 px-3 py-1 rounded-full bg-slate-800/80 text-xs font-normal text-blue-300 w-fit whitespace-nowrap sm:self-start">
                       <Calendar className="w-3 h-3" />
                       <span>{period}</span>
                     </div>
-                    
-                    
                   </div>
-                  <div className="mt-4">
+                  <div className="mt-4 min-h-[170px] sm:min-h[120px] flex flex-col items-start sm:flex-row sm:items-start">
                   {Array.isArray (description) ?
                   (<u className="mt-4 text-xs sm:text-sm text-slate-300 font-medium space-y-4 no-underline">
                      {description.map((desc, index) => (
@@ -62,7 +60,8 @@ const {t, language} = useLanguage();
                       ))}
                   </u>
                   ): (<p className="leading-relaxed">{description}</p>)}
-                  </div>
+                </div>
+                </div>
                 </GlassCard>
               </StaggerItem>);
             })}

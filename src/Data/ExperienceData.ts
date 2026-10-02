@@ -19,14 +19,14 @@ export const experienceData: ExperienceItem[] = [
         es:[
         "Implementé procesos ETL desde múltiples fuentes segmentando diversas consultas SQL desde SAS.",
         "Aseguré la precisión en la carga de datos finales trabajando con macros y uniones dentro de la segmentación del código SQL. ",
-        "Realicé análisis de datos y generación de informes para apoyar la toma de decisiones en el área de análisis de datos. Ejecuté optimizaciones, generación de escenarios en los segmentos, con las bases enviadas en campañas bimestrales para la asignación de tasas. ",
+        "Ejecuté optimizaciones, generación de escenarios en los segmentos, con las bases enviadas en campañas bimestrales para la asignación de tasas.",
         "Realicé el seguimiento y la actualización semanal en las métricas posteriores a campañas de asignación de tasas, garantizando que la información sea supervisada y confiable para la toma de decisiones."
       ],
       en: [
         "I implemented ETL processes from multiple sources by segmenting various SQL queries within SAS.",
 "I ensured accuracy in the final data load by utilizing macros and joins within the SQL code segmentation.",
 "I carried out optimizations and scenario generation for the segments, using the datasets submitted for bimonthly campaigns to assign rates.",
-"I tracked and updated post-campaign metrics for rate assignments on a weekly basis, ensuring the data was monitored and reliable for decision-making."
+"I tracked and provided weekly updates on post-campaign metrics for rate assignments, ensuring the data was monitored and reliable for decision-making."
       ]
       }
     },
