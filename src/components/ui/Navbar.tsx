@@ -2,7 +2,7 @@
 
 
 import { DictionaryKey, useLanguage } from "@/components/providers/LanguageContext";
-import { handleSmoothScroll } from "@/utils";
+import { handleSmoothScroll } from "@/lib/utils";
 import { Eye, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";

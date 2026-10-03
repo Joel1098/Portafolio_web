@@ -1,5 +1,8 @@
 
 import { Language, Localized } from "@/types/portfolio";
+import { clsx, type ClassValue } from "clsx";
+import React from "react";
+import { twMerge } from "tailwind-merge";
 
 export function getLocalized<T>(
   field: Localized<T> | undefined | null, 
@@ -10,6 +13,37 @@ export function getLocalized<T>(
   if (!field) return fallback as T;
   return field[lang] ?? field.es ?? (fallback as T);
 }
+
+export function twClassNames(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
+export const handleSmoothScroll = (
+  e: React.MouseEvent<HTMLElement>,
+  href: string
+) => {
+  e.preventDefault();
+
+  // Llevar al inicio o raiz de la pagina
+  if (href === "#inicio" || href === "#") {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    return;
+  }
+
+  // Para cualquier otra seccion por id
+  const targetId = href.replace("#", "");
+  const targetElement = document.getElementById(targetId);
+
+  if (targetElement) {
+    targetElement.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
 
 export { cn } from "cn";
 
