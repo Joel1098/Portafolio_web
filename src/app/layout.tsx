@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Joel Dorantes | Software Engineer | Data Analyst",
-  description: "Portafolio profesional de Joel Ernesto Dorantes Guerrero - Ingeniero de Software y Analista de Datos",
+  description: "Portafolio profesional de Joel Ernesto Dorantes Guerrero",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
