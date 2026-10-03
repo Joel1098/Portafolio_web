@@ -30,7 +30,7 @@ export function Contact() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 sm:grid-cols-2 gap-8 items-center relative z-10">
             <div className="lg:col-span-7 space-y-4">
-              <div className="flex flex-col gap-2 items-start min-h-35 sm:min-h-30">
+              <div className="flex flex-col gap-2 items-start min-h-35 sm:min-h-25">
               <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-xl">
                 {t("contact_description")}
               </p>
